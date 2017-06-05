@@ -41,11 +41,11 @@ import org.springframework.web.servlet.ModelAndView;
 class OwnerController {
 
     private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
-    private final OwnerRepository owners;
+    private final OwnerService owners;
 
 
     @Autowired
-    public OwnerController(OwnerRepository clinicService) {
+    public OwnerController(OwnerService clinicService) {
         this.owners = clinicService;
     }
 
