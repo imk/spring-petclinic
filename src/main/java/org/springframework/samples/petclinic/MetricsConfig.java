@@ -13,6 +13,8 @@ import com.codahale.metrics.jvm.ClassLoadingGaugeSet;
 import com.codahale.metrics.jvm.GarbageCollectorMetricSet;
 import com.codahale.metrics.jvm.MemoryUsageGaugeSet;
 import com.codahale.metrics.jvm.ThreadStatesGaugeSet;
+import com.netflix.hystrix.contrib.codahalemetricspublisher.HystrixCodaHaleMetricsPublisher;
+import com.netflix.hystrix.strategy.HystrixPlugins;
 import com.ryantenney.metrics.spring.config.annotation.EnableMetrics;
 import com.ryantenney.metrics.spring.config.annotation.MetricsConfigurerAdapter;
 
@@ -35,6 +37,7 @@ public class MetricsConfig extends MetricsConfigurerAdapter {
 		metricRegistry.registerAll(new GarbageCollectorMetricSet());
 		metricRegistry.registerAll(new ThreadStatesGaugeSet());
 		metricRegistry.registerAll(new ClassLoadingGaugeSet());
+		HystrixPlugins.getInstance().registerMetricsPublisher(new HystrixCodaHaleMetricsPublisher(metricRegistry));
 		final Graphite graphite = new Graphite(new InetSocketAddress(graphiteHost, graphitePort));
 		final GraphiteReporter reporter = GraphiteReporter.forRegistry(metricRegistry).prefixedWith(prefix).build(graphite);
         // registerReporter allows the MetricsConfigurerAdapter to
