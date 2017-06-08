@@ -1,0 +1,43 @@
+= Metriken
+
+== Java-Bibliotheken
+
+* http://metrics.dropwizard.io/[Dropwizard Metrics]
+  (ursprünglich mal yammer metrics, dann codahale metrics, nun dropwizard metrics)
+
+== Metrik-Datenbanken
+
+(Time-Series-Datenbanken, Round-Robin-Datenbanken)
+
+* https://graphiteapp.org/[Graphite]
+* http://ganglia.sourceforge.net/[Ganglia]
+* https://www.influxdata.com/[influxDB]
+* https://prometheus.io/[Prometheus]
+* http://basho.com/products/riak-ts/[Riak TS]
+* http://opentsdb.net/[OpenTSDB]
+* ...
+
+== Visualisierung
+
+* https://grafana.com/[Grafana]
+* https://www.elastic.co/de/products/kibana[Kibana]
+* integrierte Dashboards
+
+== Demo PetClinic
+
+Nutzt Graphite und Grafana, da für diese Kombination zur Zeit die umfassendste Unterstützung besteht,
+die meisten Projekte, die irgendwie Metriken erfassen, stellen diese - wenn nicht eh über Dropwizard -
+über Graphite oder JMX bereit.
+
+== weitere Themen
+
+* Request-Tracing (Request-Verfolgung über mehrere Anwendungen hinweg) wie
+** http://zipkin.io/[Zipkin]
+** https://cloud.spring.io/spring-cloud-sleuth/[Spring Cloud Sleuth]
+* Schwellenwerte, Alarmierung, ...
+
+== URLs Demo
+
+* http://localhost:8080/[Demo]
+* http://localhost:10080/[Grafana]
+* http://localhost:10081/[Graphite-UI]
