@@ -5,6 +5,20 @@
 * http://metrics.dropwizard.io/[Dropwizard Metrics]
   (ursprünglich mal yammer metrics, dann codahale metrics, nun dropwizard metrics)
 
+=== unterstützte Metriken
+
+Gauge:: der einfachste Typ einer Metrik, hält einfach nur einen Wert zu einem bestimmten Zeitpunkt,
+also bspw. die Anzahl der aktuellen DB-Verbindungen
+
+Counter:: Typ zum In- oder Dekrement, also bspw. zum Zählen der Aufrufe einer Methode
+
+Histogram:: Damit wird auch die Verteilung der Werte gespeichert, damit aus den Daten bspw. Percentilen ermittelt werden können
+
+Meter:: Speicherung der Rate, also wie oft etwas in einem Zeitfenster geschieht (inkl. Berechnung der Durchschnittswerte
+für vordefinierte Zeitfenster wie 1, 5 und 15 Minuten)
+
+Timer:: Messung der Ausführungsdauer
+
 == Metrik-Datenbanken
 
 (Time-Series-Datenbanken, Round-Robin-Datenbanken)
