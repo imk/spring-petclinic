@@ -43,6 +43,10 @@ Nutzt Graphite und Grafana, da für diese Kombination zur Zeit die umfassendste 
 die meisten Projekte, die irgendwie Metriken erfassen, stellen diese - wenn nicht eh über Dropwizard -
 über Graphite oder JMX bereit.
 
+* `docker-compose up` zum Start der MySQL und des Graphite/Grafana-Server
+* `mvn spring-boot:run` zum Start der Anwendung
+* `.../jmeter -n -t load.jmx` zur Ausführung des Lasttests, um Metrike-Werte zu erzeugen
+
 == weitere Themen
 
 * Request-Tracing (Request-Verfolgung über mehrere Anwendungen hinweg) wie
